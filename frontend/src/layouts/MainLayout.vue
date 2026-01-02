@@ -3,7 +3,9 @@
     <header class="header">
       <div class="container header-content">
         <div class="logo">
-          <h1>泰田集团</h1>
+          <router-link to="/">
+            <img src="@/assets/images/logos/logo.png" alt="泰田集团" class="logo-img" />
+          </router-link>
         </div>
         <nav class="nav">
           <router-link to="/" class="nav-item">首页</router-link>
@@ -41,7 +43,10 @@
           </div>
           <div class="footer-section">
             <h3>关注我们</h3>
-            <p>微信公众号</p>
+            <div class="qrcode-wrapper">
+              <img src="@/assets/images/misc/qrcode.jpg" alt="微信公众号" class="qrcode-img" loading="lazy" />
+              <p>微信公众号</p>
+            </div>
           </div>
         </div>
         <div class="footer-bottom">
@@ -77,11 +82,14 @@
   }
 
   .logo {
-    h1 {
-      color: #2CB5BE;
-      font-size: 28px;
-      font-weight: 700;
-      margin: 0;
+    a {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo-img {
+      height: 50px;
+      width: auto;
     }
   }
 
@@ -159,6 +167,18 @@
 
       &:hover {
         color: #2CB5BE;
+      }
+    }
+    
+    .qrcode-wrapper {
+      text-align: center;
+      
+      .qrcode-img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 10px;
       }
     }
   }
