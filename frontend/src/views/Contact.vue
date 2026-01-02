@@ -3,12 +3,12 @@
     <div class="page-header">
       <img 
         :src="headerBg" 
-        alt="联系我们" 
+        :alt="t('contactPage.title')" 
         class="header-bg"
       />
       <div class="header-content">
-        <h1>联系我们</h1>
-        <p>期待与您的合作</p>
+        <h1>{{ t('contactPage.title') }}</h1>
+        <p>{{ t('contactPage.subtitle') }}</p>
       </div>
       <div class="header-overlay"></div>
     </div>
@@ -17,12 +17,12 @@
       <div class="container">
         <div class="contact-grid">
           <div class="contact-info">
-            <h2>联系方式</h2>
+            <h2>{{ t('contactPage.contactInfo') }}</h2>
             
             <div class="info-item">
               <div class="info-icon">📞</div>
               <div class="info-text">
-                <h4>服务热线</h4>
+                <h4>{{ t('contactPage.hotline') }}</h4>
                 <p>400-826-1128</p>
               </div>
             </div>
@@ -30,7 +30,7 @@
             <div class="info-item">
               <div class="info-icon">📧</div>
               <div class="info-text">
-                <h4>公司邮箱</h4>
+                <h4>{{ t('contactPage.email') }}</h4>
                 <p>sales@chinatuta.com</p>
               </div>
             </div>
@@ -38,54 +38,54 @@
             <div class="info-item">
               <div class="info-icon">📍</div>
               <div class="info-text">
-                <h4>公司地址</h4>
-                <p>浙江省台州市椒江区海韵路528号</p>
+                <h4>{{ t('contactPage.address') }}</h4>
+                <p>{{ t('contactPage.addressValue') }}</p>
               </div>
             </div>
 
             <div class="info-item">
               <div class="info-icon">📮</div>
               <div class="info-text">
-                <h4>邮政编码</h4>
+                <h4>{{ t('contactPage.postalCode') }}</h4>
                 <p>318000</p>
               </div>
             </div>
             
             <div class="qrcode-section">
               <img :src="qrcodeImg" alt="微信公众号" class="qrcode" loading="lazy" />
-              <p>扫码关注微信公众号</p>
+              <p>{{ t('contactPage.scanQrcode') }}</p>
             </div>
           </div>
 
           <div class="contact-form card">
-            <h2>在线咨询</h2>
+            <h2>{{ t('contactPage.onlineConsult') }}</h2>
             <form @submit.prevent="submitForm">
               <div class="form-group">
-                <label>姓名</label>
-                <input v-model="form.name" type="text" placeholder="请输入您的姓名" />
+                <label>{{ t('contactPage.form.name') }}</label>
+                <input v-model="form.name" type="text" :placeholder="t('contactPage.form.namePlaceholder')" />
               </div>
               
               <div class="form-group">
-                <label>联系电话</label>
-                <input v-model="form.phone" type="tel" placeholder="请输入您的联系电话" />
+                <label>{{ t('contactPage.form.phone') }}</label>
+                <input v-model="form.phone" type="tel" :placeholder="t('contactPage.form.phonePlaceholder')" />
               </div>
               
               <div class="form-group">
-                <label>电子邮箱</label>
-                <input v-model="form.email" type="email" placeholder="请输入您的电子邮箱" />
+                <label>{{ t('contactPage.form.email') }}</label>
+                <input v-model="form.email" type="email" :placeholder="t('contactPage.form.emailPlaceholder')" />
               </div>
               
               <div class="form-group">
-                <label>咨询内容</label>
+                <label>{{ t('contactPage.form.message') }}</label>
                 <textarea 
                   v-model="form.message" 
                   rows="5"
-                  placeholder="请输入您的咨询内容"
+                  :placeholder="t('contactPage.form.messagePlaceholder')"
                 ></textarea>
               </div>
               
               <button type="submit" class="submit-button industrial-button">
-                提交咨询
+                {{ t('contactPage.form.submit') }}
               </button>
             </form>
           </div>
@@ -97,9 +97,12 @@
 
 <script setup>
 import { reactive, ref } from 'vue'
+import { useLocale } from '@/composables/useLocale'
 
 import bgImage from '@/assets/images/backgrounds/in-bg2.jpg'
 import qrcode from '@/assets/images/misc/qrcode.jpg'
+
+const { t } = useLocale()
 
 const headerBg = ref(bgImage)
 const qrcodeImg = ref(qrcode)
@@ -113,11 +116,11 @@ const form = reactive({
 
 const submitForm = () => {
   if (!form.name || !form.phone || !form.message) {
-    alert('请填写完整信息')
+    alert(t('contactPage.form.fillComplete'))
     return
   }
   
-  alert('提交成功，我们会尽快与您联系！')
+  alert(t('contactPage.form.submitSuccess'))
   
   // 清空表单
   form.name = ''

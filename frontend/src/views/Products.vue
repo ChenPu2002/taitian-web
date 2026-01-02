@@ -8,8 +8,8 @@
         loading="eager"
       />
       <div class="header-content">
-        <h1>产品中心</h1>
-        <p>提供精密机床、智能拧紧、节能空气压缩机等解决方案</p>
+        <h1>{{ t('productsPage.title') }}</h1>
+        <p>{{ t('productsPage.subtitle') }}</p>
       </div>
       <div class="header-overlay"></div>
     </div>
@@ -20,18 +20,18 @@
           <div 
             class="product-item card" 
             v-for="product in products" 
-            :key="product.name"
+            :key="product.nameKey"
           >
             <div class="product-image">
               <img 
                 :src="product.image" 
-                :alt="product.name" 
+                :alt="t(product.nameKey)" 
                 loading="lazy"
               />
             </div>
             <div class="product-info">
-              <h3>{{ product.name }}</h3>
-              <p>{{ product.description }}</p>
+              <h3>{{ t(product.nameKey) }}</h3>
+              <p>{{ t(product.descKey) }}</p>
             </div>
           </div>
         </div>
@@ -41,10 +41,10 @@
     <!-- 工业之心 泰田智造 -->
     <section class="slogan-section">
       <div class="container">
-        <h2 class="slogan-title">工业之心 泰田智造</h2>
+        <h2 class="slogan-title">{{ t('productsPage.slogan') }}</h2>
         <div class="slogan-items">
-          <p>智慧压缩机站节能解决方案服务商</p>
-          <p>智能拧紧工具解决方案服务商</p>
+          <p>{{ t('productsPage.sloganItem1') }}</p>
+          <p>{{ t('productsPage.sloganItem2') }}</p>
         </div>
       </div>
     </section>
@@ -53,6 +53,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useLocale } from '@/composables/useLocale'
 
 // 引入图片
 import productAllBanner from '@/assets/images/banners/product-all.jpg'
@@ -63,37 +64,39 @@ import compressorHost from '@/assets/images/products/compressor-host.jpg'
 import autoRepairTools from '@/assets/images/products/auto-repair-tools.png'
 import lubricationEquipment from '@/assets/images/products/lubrication-equipment.jpg'
 
+const { t } = useLocale()
+
 const productBanner = ref(productAllBanner)
 
 const products = [
   { 
-    name: '精密机床', 
-    description: '高精度、高效率的精密机床设备，广泛应用于各类精密制造领域。',
+    nameKey: 'productsPage.items.precisionMachine', 
+    descKey: 'productsPage.items.precisionMachineDesc',
     image: precisionMachine
   },
   { 
-    name: '螺杆式空气压缩机', 
-    description: '节能高效的空气压缩解决方案，满足各类工业用气需求。',
+    nameKey: 'productsPage.items.screwCompressor', 
+    descKey: 'productsPage.items.screwCompressorDesc',
     image: screwCompressor
   },
   { 
-    name: '工业级扳手系列', 
-    description: '专业的工业拧紧工具，高强度、高精度、高可靠性。',
+    nameKey: 'productsPage.items.industrialWrench', 
+    descKey: 'productsPage.items.industrialWrenchDesc',
     image: industrialWrench
   },
   { 
-    name: '螺杆式空气压缩机主机', 
-    description: '高性能压缩机主机，年产能达20万台。',
+    nameKey: 'productsPage.items.compressorHost', 
+    descKey: 'productsPage.items.compressorHostDesc',
     image: compressorHost
   },
   { 
-    name: '汽修工具系列', 
-    description: '全方位的汽修工具解决方案，年产能100万台。',
+    nameKey: 'productsPage.items.autoRepairTools', 
+    descKey: 'productsPage.items.autoRepairToolsDesc',
     image: autoRepairTools
   },
   { 
-    name: '润滑设备', 
-    description: '专业的润滑设备和解决方案。',
+    nameKey: 'productsPage.items.lubricationEquipment', 
+    descKey: 'productsPage.items.lubricationEquipmentDesc',
     image: lubricationEquipment
   }
 ]

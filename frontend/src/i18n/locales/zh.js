@@ -1,0 +1,205 @@
+export default {
+  // 导航
+  nav: {
+    home: '首页',
+    about: '关于泰田',
+    products: '产品中心',
+    applications: '行业应用',
+    news: '公司动态',
+    contact: '联系我们',
+    admin: '管理后台'
+  },
+
+  // 页脚
+  footer: {
+    contactUs: '联系我们',
+    serviceLine: '服务热线：400-826-1128',
+    email: '公司邮箱：sales@chinatuta.com',
+    address: '公司地址：浙江省台州市椒江区海韵路528号',
+    quickLinks: '快速链接',
+    aboutUs: '关于我们',
+    followUs: '关注我们',
+    wechat: '微信公众号',
+    copyright: 'COPYRIGHT © 泰田集团股份有限公司 版权所有 ALL RIGHTS RESERVED'
+  },
+
+  // 首页
+  home: {
+    heroTitle: '拧紧工具/空气动力设备解决方案服务商',
+    heroSubtitle: '专精特新 · 智能制造 · 品质保障',
+    viewProducts: '产品中心 >>>',
+    companyIntro: {
+      title: '专精特新',
+      subtitle: '高新技术企业 · 专精特新小巨人企业',
+      description: '泰田集团股份有限公司成立于2007年，注册资金6088万元，现拥有员工900余人，是一家集研发、生产与销售为一体的高新技术企业，也是"专精特新"小巨人企业。拥有精密机床/空气压缩机、压缩机主机、拧紧工具以及精密机械零件加工三大生产基地。公司始终坚信先进的装备是一流品质的保障，引进国外先进生产线，并配备2000多台CNC加工设备，全面部署MES+ERP系统，实现人机信息的高度一体化。'
+    },
+    stats: {
+      foundedIn: '公司创立于',
+      registeredCapital: '公司注册资金',
+      employees: '公司员工数',
+      cncEquipment: 'CNC加工设备',
+      patents: '公司专利数',
+      compressorHosts: '年产压缩主机',
+      pneumaticTools: '年产气动工具'
+    },
+    research: {
+      intro: '我们拥有一支以行业专家为带头人，以中青年技术骨干为主体，梯队结构合理的技术创新团队，我们始终以自主创新为基础，坚持专研前沿性项目和跨界新锐领域项目，实施迭代研发，打造行业知识产权高地。',
+      concept: '研发理念',
+      conceptDesc: '坚持自主研发 锻造品质产品',
+      practice: '研发实践',
+      practiceDesc: '为客户创造效益',
+      resource: '研发资源',
+      resourceDesc: '从客户需求出发'
+    },
+    products: {
+      title: '产品中心',
+      subtitle: '为客户提供优质的产品与服务',
+      viewAll: '查看全部产品',
+      precisionMachine: '精密机床',
+      precisionMachineDesc: '高精度、高效率的精密机床设备',
+      screwCompressor: '螺杆式空气压缩机',
+      screwCompressorDesc: '节能高效的空气压缩解决方案',
+      industrialWrench: '工业级扳手系列',
+      industrialWrenchDesc: '专业的工业拧紧工具',
+      autoRepairTools: '汽修工具系列',
+      autoRepairToolsDesc: '全方位的汽修工具解决方案'
+    },
+    news: {
+      title: '新闻动态'
+    },
+    cta: {
+      title: '联系我们',
+      subtitle: '全国售后服务热线',
+      phone: '400-826-1128',
+      consult: '立即咨询'
+    }
+  },
+
+  // 产品中心页面
+  productsPage: {
+    title: '产品中心',
+    subtitle: '提供精密机床、智能拧紧、节能空气压缩机等解决方案',
+    slogan: '工业之心 泰田智造',
+    sloganItem1: '智慧压缩机站节能解决方案服务商',
+    sloganItem2: '智能拧紧工具解决方案服务商',
+    items: {
+      precisionMachine: '精密机床',
+      precisionMachineDesc: '高精度、高效率的精密机床设备，广泛应用于各类精密制造领域。',
+      screwCompressor: '螺杆式空气压缩机',
+      screwCompressorDesc: '节能高效的空气压缩解决方案，满足各类工业用气需求。',
+      industrialWrench: '工业级扳手系列',
+      industrialWrenchDesc: '专业的工业拧紧工具，高强度、高精度、高可靠性。',
+      compressorHost: '螺杆式空气压缩机主机',
+      compressorHostDesc: '高性能压缩机主机，年产能达20万台。',
+      autoRepairTools: '汽修工具系列',
+      autoRepairToolsDesc: '全方位的汽修工具解决方案，年产能100万台。',
+      lubricationEquipment: '润滑设备',
+      lubricationEquipmentDesc: '专业的润滑设备和解决方案。'
+    }
+  },
+
+  // 关于我们页面
+  aboutPage: {
+    title: '关于泰田',
+    subtitle: '专注于工业制造领域的创新与发展',
+    companyInfo: '企业信息',
+    companyDesc1: '泰田集团股份有限公司成立于2007年，注册资金6088万元，现拥有员工900余人，是一家集研发、生产与销售为一体的高新技术企业，也是"专精特新"小巨人企业。',
+    companyDesc2: '公司拥有精密机床/空气压缩机、压缩机主机、拧紧工具以及精密机械零件加工三大生产基地。',
+    companyDesc3: '公司始终坚信先进的装备是一流品质的保障，引进国外先进生产线，并配备2000多台CNC加工设备，全面部署MES+ERP系统，实现人机信息的高度一体化，构建起泰田独有的"一人多机、人机物协同"的多环节制程管控新体系，形成了泰田"专、精、尖"的智造模式。',
+    stats: {
+      founded: '公司创立',
+      foundedUnit: '年',
+      capital: '注册资金',
+      capitalUnit: '万',
+      employees: '公司员工',
+      employeesUnit: '+',
+      cnc: 'CNC设备',
+      cncUnit: '+',
+      patents: '专利数量',
+      patentsUnit: '+'
+    },
+    philosophy: '企业理念',
+    philosophyItems: {
+      innovation: '创新',
+      innovationDesc: '坚持自主创新，打造行业知识产权高地',
+      quality: '品质',
+      qualityDesc: '先进装备保障一流品质',
+      service: '服务',
+      serviceDesc: '为客户创造效益，提供优质服务',
+      expertise: '专精',
+      expertiseDesc: '专、精、尖的智造模式'
+    },
+    rdStrength: '研发实力',
+    rdDesc: '我们拥有一支以行业专家为带头人，以中青年技术骨干为主体，梯队结构合理的技术创新团队。我们始终以自主创新为基础，坚持专研前沿性项目和跨界新锐领域项目，实施迭代研发，打造行业知识产权高地。',
+    rdConcept: '研发理念',
+    rdConceptDesc: '坚持自主研发 锻造品质产品',
+    rdPractice: '研发实践',
+    rdPracticeDesc: '为客户创造效益',
+    rdResource: '研发资源',
+    rdResourceDesc: '从客户需求出发'
+  },
+
+  // 行业应用页面
+  applicationsPage: {
+    title: '行业应用',
+    subtitle: '为多个行业提供专业的解决方案',
+    automotive: '汽车制造行业',
+    automotiveDesc: '为汽车制造行业提供专业的拧紧工具和空气动力解决方案，确保生产线的高效运行。',
+    precision: '精密制造行业',
+    precisionDesc: '高精度机床和精密加工设备，满足精密制造的严格要求。',
+    automation: '工业自动化行业',
+    automationDesc: '智能化、自动化的工业解决方案，助力企业实现智能制造。',
+    repair: '汽车维修行业',
+    repairDesc: '专业的汽修工具系列，提高维修效率和质量。',
+    fluid: '流体及汽车保养行业',
+    fluidDesc: '润滑设备和流体处理解决方案，保障设备正常运行。'
+  },
+
+  // 新闻动态页面
+  newsPage: {
+    title: '公司动态',
+    subtitle: '了解泰田集团最新资讯',
+    readMore: '阅读更多 →'
+  },
+
+  // 联系我们页面
+  contactPage: {
+    title: '联系我们',
+    subtitle: '期待与您的合作',
+    contactInfo: '联系方式',
+    hotline: '服务热线',
+    email: '公司邮箱',
+    address: '公司地址',
+    addressValue: '浙江省台州市椒江区海韵路528号',
+    postalCode: '邮政编码',
+    scanQrcode: '扫码关注微信公众号',
+    onlineConsult: '在线咨询',
+    form: {
+      name: '姓名',
+      namePlaceholder: '请输入您的姓名',
+      phone: '联系电话',
+      phonePlaceholder: '请输入您的联系电话',
+      email: '电子邮箱',
+      emailPlaceholder: '请输入您的电子邮箱',
+      message: '咨询内容',
+      messagePlaceholder: '请输入您的咨询内容',
+      submit: '提交咨询',
+      fillComplete: '请填写完整信息',
+      submitSuccess: '提交成功，我们会尽快与您联系！'
+    }
+  },
+
+  // 通用
+  common: {
+    learnMore: '了解更多',
+    readMore: '阅读更多',
+    submit: '提交',
+    loading: '加载中...'
+  },
+
+  // 语言
+  language: {
+    zh: '中文',
+    en: 'English'
+  }
+}

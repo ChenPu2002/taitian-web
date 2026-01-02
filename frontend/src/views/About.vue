@@ -3,12 +3,12 @@
     <div class="page-header">
       <img 
         :src="backgroundImage" 
-        alt="关于泰田" 
+        :alt="t('aboutPage.title')" 
         class="header-bg"
       />
       <div class="header-content">
-        <h1>关于泰田</h1>
-        <p>专注于工业制造领域的创新与发展</p>
+        <h1>{{ t('aboutPage.title') }}</h1>
+        <p>{{ t('aboutPage.subtitle') }}</p>
       </div>
       <div class="header-overlay"></div>
     </div>
@@ -16,41 +16,41 @@
     <section class="about-content">
       <div class="container">
         <div class="content-section">
-          <h2>企业信息</h2>
-          <p>泰田集团股份有限公司成立于2007年，注册资金6088万元，现拥有员工900余人，是一家集研发、生产与销售为一体的高新技术企业，也是"专精特新"小巨人企业。</p>
-          <p>公司拥有精密机床/空气压缩机、压缩机主机、拧紧工具以及精密机械零件加工三大生产基地。</p>
-          <p>公司始终坚信先进的装备是一流品质的保障，引进国外先进生产线，并配备2000多台CNC加工设备，全面部署MES+ERP系统，实现人机信息的高度一体化，构建起泰田独有的"一人多机、人机物协同"的多环节制程管控新体系，形成了泰田"专、精、尖"的智造模式。</p>
+          <h2>{{ t('aboutPage.companyInfo') }}</h2>
+          <p>{{ t('aboutPage.companyDesc1') }}</p>
+          <p>{{ t('aboutPage.companyDesc2') }}</p>
+          <p>{{ t('aboutPage.companyDesc3') }}</p>
         </div>
 
         <div class="stats-section">
-          <div class="stat-card" v-for="stat in stats" :key="stat.label">
+          <div class="stat-card" v-for="stat in stats" :key="stat.labelKey">
             <div class="stat-value">{{ stat.value }}</div>
-            <div class="stat-unit">{{ stat.unit }}</div>
-            <div class="stat-label">{{ stat.label }}</div>
+            <div class="stat-unit">{{ t(stat.unitKey) }}</div>
+            <div class="stat-label">{{ t(stat.labelKey) }}</div>
           </div>
         </div>
 
         <div class="content-section">
-          <h2>企业理念</h2>
+          <h2>{{ t('aboutPage.philosophy') }}</h2>
           <div class="philosophy-grid">
-            <div class="philosophy-item card" v-for="item in philosophyItems" :key="item.title">
+            <div class="philosophy-item card" v-for="item in philosophyItems" :key="item.titleKey">
               <div class="philosophy-icon">{{ item.icon }}</div>
-              <h3>{{ item.title }}</h3>
-              <p>{{ item.description }}</p>
+              <h3>{{ t(item.titleKey) }}</h3>
+              <p>{{ t(item.descKey) }}</p>
             </div>
           </div>
         </div>
         
         <div class="content-section">
-          <h2>研发实力</h2>
-          <p>我们拥有一支以行业专家为带头人，以中青年技术骨干为主体，梯队结构合理的技术创新团队。我们始终以自主创新为基础，坚持专研前沿性项目和跨界新锐领域项目，实施迭代研发，打造行业知识产权高地。</p>
+          <h2>{{ t('aboutPage.rdStrength') }}</h2>
+          <p>{{ t('aboutPage.rdDesc') }}</p>
           
           <div class="research-grid">
-            <div class="research-item" v-for="item in researchItems" :key="item.title">
-              <img :src="item.image" :alt="item.title" loading="lazy" />
+            <div class="research-item" v-for="item in researchItems" :key="item.titleKey">
+              <img :src="item.image" :alt="t(item.titleKey)" loading="lazy" />
               <div class="research-info">
-                <h4>{{ item.title }}</h4>
-                <p>{{ item.description }}</p>
+                <h4>{{ t(item.titleKey) }}</h4>
+                <p>{{ t(item.descKey) }}</p>
               </div>
             </div>
           </div>
@@ -62,33 +62,36 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useLocale } from '@/composables/useLocale'
 
 import bgImage from '@/assets/images/backgrounds/in-bg1.jpg'
 import researchConcept from '@/assets/images/banners/research-concept.jpg'
 import researchPractice from '@/assets/images/banners/research-practice.jpg'
 import researchResource from '@/assets/images/banners/research-resource.jpg'
 
+const { t } = useLocale()
+
 const backgroundImage = ref(bgImage)
 
 const stats = [
-  { value: '2007', unit: '年', label: '公司创立' },
-  { value: '6088', unit: '万', label: '注册资金' },
-  { value: '900', unit: '+', label: '公司员工' },
-  { value: '2000', unit: '+', label: 'CNC设备' },
-  { value: '120', unit: '+', label: '专利数量' }
+  { value: '2007', unitKey: 'aboutPage.stats.foundedUnit', labelKey: 'aboutPage.stats.founded' },
+  { value: '6088', unitKey: 'aboutPage.stats.capitalUnit', labelKey: 'aboutPage.stats.capital' },
+  { value: '900', unitKey: 'aboutPage.stats.employeesUnit', labelKey: 'aboutPage.stats.employees' },
+  { value: '2000', unitKey: 'aboutPage.stats.cncUnit', labelKey: 'aboutPage.stats.cnc' },
+  { value: '120', unitKey: 'aboutPage.stats.patentsUnit', labelKey: 'aboutPage.stats.patents' }
 ]
 
 const philosophyItems = [
-  { icon: '💡', title: '创新', description: '坚持自主创新，打造行业知识产权高地' },
-  { icon: '⭐', title: '品质', description: '先进装备保障一流品质' },
-  { icon: '🤝', title: '服务', description: '为客户创造效益，提供优质服务' },
-  { icon: '🎯', title: '专精', description: '专、精、尖的智造模式' }
+  { icon: '💡', titleKey: 'aboutPage.philosophyItems.innovation', descKey: 'aboutPage.philosophyItems.innovationDesc' },
+  { icon: '⭐', titleKey: 'aboutPage.philosophyItems.quality', descKey: 'aboutPage.philosophyItems.qualityDesc' },
+  { icon: '🤝', titleKey: 'aboutPage.philosophyItems.service', descKey: 'aboutPage.philosophyItems.serviceDesc' },
+  { icon: '🎯', titleKey: 'aboutPage.philosophyItems.expertise', descKey: 'aboutPage.philosophyItems.expertiseDesc' }
 ]
 
 const researchItems = [
-  { title: '研发理念', description: '坚持自主研发 锻造品质产品', image: researchConcept },
-  { title: '研发实践', description: '为客户创造效益', image: researchPractice },
-  { title: '研发资源', description: '从客户需求出发', image: researchResource }
+  { titleKey: 'aboutPage.rdConcept', descKey: 'aboutPage.rdConceptDesc', image: researchConcept },
+  { titleKey: 'aboutPage.rdPractice', descKey: 'aboutPage.rdPracticeDesc', image: researchPractice },
+  { titleKey: 'aboutPage.rdResource', descKey: 'aboutPage.rdResourceDesc', image: researchResource }
 ]
 </script>
 

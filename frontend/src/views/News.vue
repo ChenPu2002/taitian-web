@@ -3,12 +3,12 @@
     <div class="page-header">
       <img 
         :src="headerBg" 
-        alt="公司动态" 
+        :alt="t('newsPage.title')" 
         class="header-bg"
       />
       <div class="header-content">
-        <h1>公司动态</h1>
-        <p>了解泰田集团最新资讯</p>
+        <h1>{{ t('newsPage.title') }}</h1>
+        <p>{{ t('newsPage.subtitle') }}</p>
       </div>
       <div class="header-overlay"></div>
     </div>
@@ -30,7 +30,7 @@
               </div>
               <h3>{{ item.title }}</h3>
               <p>{{ item.summary }}</p>
-              <a href="#" class="read-more">阅读更多 →</a>
+              <a href="#" class="read-more">{{ t('newsPage.readMore') }}</a>
             </div>
           </div>
         </div>
@@ -41,11 +41,14 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useLocale } from '@/composables/useLocale'
 
 import bgImage from '@/assets/images/backgrounds/section_bg4.jpg'
 import news1 from '@/assets/images/news/news1.jpg'
 import news2 from '@/assets/images/news/news2.jpg'
 import news3 from '@/assets/images/news/news3.jpg'
+
+const { t } = useLocale()
 
 const headerBg = ref(bgImage)
 

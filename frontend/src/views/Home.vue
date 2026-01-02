@@ -9,9 +9,9 @@
         @load="onHeroLoad"
       />
       <div class="hero-content">
-        <h1 class="hero-title">拧紧工具/空气动力设备解决方案服务商</h1>
-        <p class="hero-subtitle">专精特新 · 智能制造 · 品质保障</p>
-        <router-link to="/products" class="industrial-button">产品中心 >>></router-link>
+        <h1 class="hero-title">{{ t('home.heroTitle') }}</h1>
+        <p class="hero-subtitle">{{ t('home.heroSubtitle') }}</p>
+        <router-link :to="localePath('/products')" class="industrial-button">{{ t('home.viewProducts') }}</router-link>
       </div>
       <div class="hero-overlay"></div>
     </section>
@@ -19,23 +19,19 @@
     <!-- Company Intro -->
     <section class="company-intro">
       <div class="container">
-        <h2 class="section-title">专精特新</h2>
-        <p class="section-subtitle">高新技术企业 · 专精特新小巨人企业</p>
+        <h2 class="section-title">{{ t('home.companyIntro.title') }}</h2>
+        <p class="section-subtitle">{{ t('home.companyIntro.subtitle') }}</p>
         
         <div class="intro-content">
           <p class="intro-text">
-            泰田集团股份有限公司成立于2007年，注册资金6088万元，现拥有员工900余人，
-            是一家集研发、生产与销售为一体的高新技术企业，也是"专精特新"小巨人企业。
-            拥有精密机床/空气压缩机、压缩机主机、拧紧工具以及精密机械零件加工三大生产基地。
-            公司始终坚信先进的装备是一流品质的保障，引进国外先进生产线，并配备2000多台CNC加工设备，
-            全面部署MES+ERP系统，实现人机信息的高度一体化。
+            {{ t('home.companyIntro.description') }}
           </p>
         </div>
 
         <div class="stats">
-          <div class="stat-item" v-for="stat in companyStats" :key="stat.label">
+          <div class="stat-item" v-for="stat in companyStats" :key="stat.labelKey">
             <div class="stat-number">{{ stat.value }}</div>
-            <div class="stat-label">{{ stat.label }}</div>
+            <div class="stat-label">{{ t(stat.labelKey) }}</div>
           </div>
         </div>
       </div>
@@ -45,18 +41,17 @@
     <section class="research-section">
       <div class="container">
         <p class="research-intro">
-          我们拥有一支以行业专家为带头人，以中青年技术骨干为主体，梯队结构合理的技术创新团队，
-          我们始终以自主创新为基础，坚持专研前沿性项目和跨界新锐领域项目，实施迭代研发，打造行业知识产权高地。
+          {{ t('home.research.intro') }}
         </p>
         
         <div class="research-grid">
-          <div class="research-card" v-for="item in researchItems" :key="item.title">
+          <div class="research-card" v-for="item in researchItems" :key="item.titleKey">
             <div class="research-image">
-              <img :src="item.image" :alt="item.title" loading="lazy" />
+              <img :src="item.image" :alt="t(item.titleKey)" loading="lazy" />
             </div>
             <div class="research-info">
-              <h3>{{ item.title }}</h3>
-              <p>{{ item.description }}</p>
+              <h3>{{ t(item.titleKey) }}</h3>
+              <p>{{ t(item.descKey) }}</p>
             </div>
           </div>
         </div>
@@ -66,21 +61,21 @@
     <!-- Products -->
     <section class="products-section">
       <div class="container">
-        <h2 class="section-title">产品中心</h2>
-        <p class="section-subtitle">为客户提供优质的产品与服务</p>
+        <h2 class="section-title">{{ t('home.products.title') }}</h2>
+        <p class="section-subtitle">{{ t('home.products.subtitle') }}</p>
 
         <div class="products-grid">
-          <div class="product-card card" v-for="product in products" :key="product.name">
+          <div class="product-card card" v-for="product in products" :key="product.nameKey">
             <div class="product-image">
-              <img :src="product.image" :alt="product.name" loading="lazy" />
+              <img :src="product.image" :alt="t(product.nameKey)" loading="lazy" />
             </div>
-            <h3>{{ product.name }}</h3>
-            <p>{{ product.description }}</p>
+            <h3>{{ t(product.nameKey) }}</h3>
+            <p>{{ t(product.descKey) }}</p>
           </div>
         </div>
         
         <div class="products-action">
-          <router-link to="/products" class="industrial-button">查看全部产品</router-link>
+          <router-link :to="localePath('/products')" class="industrial-button">{{ t('home.products.viewAll') }}</router-link>
         </div>
       </div>
     </section>
@@ -88,7 +83,7 @@
     <!-- News Section -->
     <section class="news-section">
       <div class="container">
-        <h2 class="section-title">新闻动态</h2>
+        <h2 class="section-title">{{ t('home.news.title') }}</h2>
         <div class="news-grid">
           <div class="news-card" v-for="news in newsList" :key="news.id">
             <div class="news-image">
@@ -107,17 +102,18 @@
     <!-- CTA Section -->
     <section class="cta-section">
       <div class="container">
-        <h2>联系我们</h2>
-        <p>全国售后服务热线</p>
-        <div class="phone-number">400-826-1128</div>
-        <router-link to="/contact" class="industrial-button cta-btn">立即咨询</router-link>
+        <h2>{{ t('home.cta.title') }}</h2>
+        <p>{{ t('home.cta.subtitle') }}</p>
+        <div class="phone-number">{{ t('home.cta.phone') }}</div>
+        <router-link :to="localePath('/contact')" class="industrial-button cta-btn">{{ t('home.cta.consult') }}</router-link>
       </div>
     </section>
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
+import { useLocale } from '@/composables/useLocale'
 
 // 引入图片
 import heroBanner from '@/assets/images/banners/hero-banner.jpg'
@@ -132,41 +128,43 @@ import news1 from '@/assets/images/news/news1.jpg'
 import news2 from '@/assets/images/news/news2.jpg'
 import news3 from '@/assets/images/news/news3.jpg'
 
+const { t, localePath } = useLocale()
+
 const heroBannerUrl = ref(heroBanner)
 
 const companyStats = [
-  { value: '2007', label: '公司创立于' },
-  { value: '6088万', label: '公司注册资金' },
-  { value: '900+', label: '公司员工数' },
-  { value: '2000+', label: 'CNC加工设备' },
-  { value: '120+', label: '公司专利数' },
-  { value: '20万', label: '年产压缩主机' },
-  { value: '100万', label: '年产气动工具' }
+  { value: '2007', labelKey: 'home.stats.foundedIn' },
+  { value: '6088万', labelKey: 'home.stats.registeredCapital' },
+  { value: '900+', labelKey: 'home.stats.employees' },
+  { value: '2000+', labelKey: 'home.stats.cncEquipment' },
+  { value: '120+', labelKey: 'home.stats.patents' },
+  { value: '20万', labelKey: 'home.stats.compressorHosts' },
+  { value: '100万', labelKey: 'home.stats.pneumaticTools' }
 ]
 
 const researchItems = [
   { 
-    title: '研发理念', 
-    description: '坚持自主研发 锻造品质产品',
+    titleKey: 'home.research.concept', 
+    descKey: 'home.research.conceptDesc',
     image: researchConcept
   },
   { 
-    title: '研发实践', 
-    description: '为客户创造效益',
+    titleKey: 'home.research.practice', 
+    descKey: 'home.research.practiceDesc',
     image: researchPractice
   },
   { 
-    title: '研发资源', 
-    description: '从客户需求出发',
+    titleKey: 'home.research.resource', 
+    descKey: 'home.research.resourceDesc',
     image: researchResource
   }
 ]
 
 const products = [
-  { name: '精密机床', description: '高精度、高效率的精密机床设备', image: precisionMachine },
-  { name: '螺杆式空气压缩机', description: '节能高效的空气压缩解决方案', image: screwCompressor },
-  { name: '工业级扳手系列', description: '专业的工业拧紧工具', image: industrialWrench },
-  { name: '汽修工具系列', description: '全方位的汽修工具解决方案', image: autoRepairTools }
+  { nameKey: 'home.products.precisionMachine', descKey: 'home.products.precisionMachineDesc', image: precisionMachine },
+  { nameKey: 'home.products.screwCompressor', descKey: 'home.products.screwCompressorDesc', image: screwCompressor },
+  { nameKey: 'home.products.industrialWrench', descKey: 'home.products.industrialWrenchDesc', image: industrialWrench },
+  { nameKey: 'home.products.autoRepairTools', descKey: 'home.products.autoRepairToolsDesc', image: autoRepairTools }
 ]
 
 const newsList = [
