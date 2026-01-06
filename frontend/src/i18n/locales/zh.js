@@ -4,10 +4,68 @@ export default {
     home: '首页',
     about: '关于泰田',
     products: '产品中心',
-    applications: '行业应用',
-    news: '公司动态',
+    services: '服务支持',
+    research: '创新研发',
+    news: '新闻资讯',
     contact: '联系我们',
-    admin: '管理后台'
+    admin: '管理后台',
+    promoText: '无论是在产品研发阶段还是在部署和迭代阶段，我们都将全力为您提供专业的支持。',
+    
+    // 二级导航
+    sub: {
+      // 关于泰田
+      overview: '泰田概况',
+      production: '生产实景',
+      honors: '荣誉资质',
+      
+      // 产品中心
+      precisionMachine: '精密机床',
+      screwCompressor: '螺杆式空气压缩机',
+      compressorHost: '螺杆式空气压缩机主机',
+      electricTools: '电动拧紧工具',
+      pneumaticTools: '气动拧紧工具',
+      lubricationEquipment: '润滑设备',
+      
+      // 服务支持
+      preSales: '售前咨询',
+      afterSales: '售后保障',
+      documents: '产品资料',
+      
+      // 创新研发
+      techCenter: '技术中心',
+      patents: '专利认证',
+      
+      // 新闻资讯
+      companyNews: '泰田新闻',
+      exhibitions: '展会现场'
+    },
+    
+    // 三级导航 - 产品详情
+    productItems: {
+      // 螺杆式空气压缩机
+      singleStage: '单级空气压缩机',
+      verticalDualStage: '上下双级空气压缩机',
+      horizontalDualStage: '水平双级空气压缩机',
+      portable: '可移动空气压缩机',
+      
+      // 螺杆式空气压缩机主机
+      singleStageHost: '单级主机',
+      verticalDualStageHost: '上下双级主机',
+      horizontalDualStageHost: '水平双级主机',
+      
+      // 电动拧紧工具
+      batteryImpact: '电池冲击式定扭扳手',
+      batteryClutch: '电池离合器拧紧定扭扳手',
+      batterySensor: '电池传感器定扭工具',
+      
+      // 气动拧紧工具
+      autoRepairImpact: '汽修级冲击式扳手',
+      industrialImpact: '工业级冲击式扳手',
+      
+      // 润滑设备
+      greaseMachine: '黄油机',
+      oilMachine: '机油机'
+    }
   },
 
   // 页脚
@@ -139,6 +197,38 @@ export default {
     rdResourceDesc: '从客户需求出发'
   },
 
+  // 服务支持页面
+  servicesPage: {
+    title: '服务支持',
+    subtitle: '全方位的售前售后服务保障',
+    preSales: {
+      title: '售前咨询',
+      desc: '专业的技术团队为您提供产品选型、方案设计等咨询服务。'
+    },
+    afterSales: {
+      title: '售后保障',
+      desc: '完善的售后服务体系，快速响应客户需求，保障设备稳定运行。'
+    },
+    documents: {
+      title: '产品资料',
+      desc: '提供完整的产品手册、技术文档及培训资料下载。'
+    }
+  },
+
+  // 创新研发页面
+  researchPage: {
+    title: '创新研发',
+    subtitle: '自主创新，打造行业知识产权高地',
+    techCenter: {
+      title: '技术中心',
+      desc: '拥有省级技术中心，配备先进研发设备和专业技术团队。'
+    },
+    patents: {
+      title: '专利认证',
+      desc: '持有多项发明专利和实用新型专利，彰显技术创新实力。'
+    }
+  },
+
   // 行业应用页面
   applicationsPage: {
     title: '行业应用',
@@ -157,9 +247,17 @@ export default {
 
   // 新闻动态页面
   newsPage: {
-    title: '公司动态',
+    title: '新闻资讯',
     subtitle: '了解泰田集团最新资讯',
-    readMore: '阅读更多 →'
+    readMore: '阅读更多 →',
+    companyNews: {
+      title: '泰田新闻',
+      desc: '公司最新动态、重要公告及企业发展资讯。'
+    },
+    exhibitions: {
+      title: '展会现场',
+      desc: '泰田参加的各类行业展会、技术交流活动精彩回顾。'
+    }
   },
 
   // 联系我们页面

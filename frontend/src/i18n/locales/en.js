@@ -4,10 +4,68 @@ export default {
     home: 'Home',
     about: 'About Us',
     products: 'Products',
-    applications: 'Applications',
+    services: 'Services',
+    research: 'R&D',
     news: 'News',
     contact: 'Contact',
-    admin: 'Admin'
+    admin: 'Admin',
+    promoText: 'Whether in the R&D phase or deployment and iteration phase, we will provide you with professional support.',
+    
+    // Second level navigation
+    sub: {
+      // About
+      overview: 'Company Overview',
+      production: 'Production Facilities',
+      honors: 'Honors & Certifications',
+      
+      // Products
+      precisionMachine: 'Precision Machine Tools',
+      screwCompressor: 'Screw Air Compressor',
+      compressorHost: 'Compressor Host',
+      electricTools: 'Electric Fastening Tools',
+      pneumaticTools: 'Pneumatic Fastening Tools',
+      lubricationEquipment: 'Lubrication Equipment',
+      
+      // Services
+      preSales: 'Pre-Sales Consultation',
+      afterSales: 'After-Sales Support',
+      documents: 'Product Documentation',
+      
+      // Research
+      techCenter: 'Technology Center',
+      patents: 'Patents & Certifications',
+      
+      // News
+      companyNews: 'Company News',
+      exhibitions: 'Exhibitions'
+    },
+    
+    // Third level navigation - Product details
+    productItems: {
+      // Screw Air Compressor
+      singleStage: 'Single-Stage Compressor',
+      verticalDualStage: 'Vertical Dual-Stage Compressor',
+      horizontalDualStage: 'Horizontal Dual-Stage Compressor',
+      portable: 'Portable Compressor',
+      
+      // Compressor Host
+      singleStageHost: 'Single-Stage Host',
+      verticalDualStageHost: 'Vertical Dual-Stage Host',
+      horizontalDualStageHost: 'Horizontal Dual-Stage Host',
+      
+      // Electric Tools
+      batteryImpact: 'Battery Impact Torque Wrench',
+      batteryClutch: 'Battery Clutch Torque Wrench',
+      batterySensor: 'Battery Sensor Torque Tool',
+      
+      // Pneumatic Tools
+      autoRepairImpact: 'Auto Repair Impact Wrench',
+      industrialImpact: 'Industrial Impact Wrench',
+      
+      // Lubrication
+      greaseMachine: 'Grease Dispenser',
+      oilMachine: 'Oil Dispenser'
+    }
   },
 
   // Footer
@@ -139,6 +197,38 @@ export default {
     rdResourceDesc: 'Starting from customer needs'
   },
 
+  // Services Page
+  servicesPage: {
+    title: 'Services & Support',
+    subtitle: 'Comprehensive pre-sales and after-sales service guarantee',
+    preSales: {
+      title: 'Pre-Sales Consultation',
+      desc: 'Professional technical team provides product selection, solution design and other consulting services.'
+    },
+    afterSales: {
+      title: 'After-Sales Support',
+      desc: 'Complete after-sales service system, rapid response to customer needs, ensuring stable equipment operation.'
+    },
+    documents: {
+      title: 'Product Documentation',
+      desc: 'Provides complete product manuals, technical documents and training materials for download.'
+    }
+  },
+
+  // Research Page
+  researchPage: {
+    title: 'Innovation & R&D',
+    subtitle: 'Independent innovation, building industry intellectual property highland',
+    techCenter: {
+      title: 'Technology Center',
+      desc: 'Provincial technology center equipped with advanced R&D equipment and professional technical team.'
+    },
+    patents: {
+      title: 'Patents & Certifications',
+      desc: 'Holds multiple invention patents and utility model patents, demonstrating technical innovation strength.'
+    }
+  },
+
   // Applications Page
   applicationsPage: {
     title: 'Applications',
@@ -157,9 +247,17 @@ export default {
 
   // News Page
   newsPage: {
-    title: 'Company News',
+    title: 'News',
     subtitle: 'Learn about the latest news from Taitian Group',
-    readMore: 'Read More →'
+    readMore: 'Read More →',
+    companyNews: {
+      title: 'Company News',
+      desc: 'Latest company updates, important announcements and corporate development news.'
+    },
+    exhibitions: {
+      title: 'Exhibitions',
+      desc: 'Highlights from various industry exhibitions and technical exchange activities attended by Taitian.'
+    }
   },
 
   // Contact Page
