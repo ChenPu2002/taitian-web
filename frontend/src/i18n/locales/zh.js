@@ -140,7 +140,8 @@ export default {
       autoRepairToolsDesc: '全方位的汽修工具解决方案'
     },
     news: {
-      title: '新闻动态'
+      title: '新闻资讯',
+      viewAll: '查看全部新闻'
     },
     cta: {
       title: '联系我们',

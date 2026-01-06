@@ -140,7 +140,8 @@ export default {
       autoRepairToolsDesc: 'Comprehensive auto repair tool solutions'
     },
     news: {
-      title: 'News'
+      title: 'News',
+      viewAll: 'View All News'
     },
     cta: {
       title: 'Contact Us',

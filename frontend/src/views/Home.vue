@@ -126,6 +126,10 @@
             </div>
           </div>
         </div>
+        
+        <div class="news-action">
+          <router-link :to="localePath('/news')" class="industrial-button">{{ t('home.news.viewAll') }}</router-link>
+        </div>
       </div>
     </section>
 
@@ -911,6 +915,15 @@ const onHeroLoad = () => {
         font-size: 12px;
         color: #999;
       }
+    }
+  }
+  
+  .news-action {
+    text-align: center;
+    margin-top: 50px;
+    
+    .industrial-button {
+      text-decoration: none;
     }
   }
 }
