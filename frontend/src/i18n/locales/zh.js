@@ -72,7 +72,7 @@ export default {
   footer: {
     contactUs: '联系我们',
     serviceLine: '服务热线：400-826-1128',
-    email: '公司邮箱：sales@chinatuta.com',
+    email: "公司邮箱：sales{'@'}chinatuta.com",
     address: '公司地址：浙江省台州市椒江区海韵路528号',
     quickLinks: '快速链接',
     aboutUs: '关于我们',

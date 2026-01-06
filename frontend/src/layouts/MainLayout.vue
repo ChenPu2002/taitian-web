@@ -91,7 +91,7 @@
                     <div class="promo-image">
                       <img 
                         :src="menu.key === 'products' ? getProductImage(activeCategory) : getPromoImage(menu.key)" 
-                        :alt="menu.key === 'products' ? t(`nav.sub.${activeCategory}`) : t(`nav.${menu.key}`)" 
+                        :alt="menu.key === 'products' && activeCategory ? t(`nav.sub.${activeCategory}`) : t(`nav.${menu.key}`)" 
                       />
                     </div>
                     <p class="promo-text">{{ t('nav.promoText') }}</p>

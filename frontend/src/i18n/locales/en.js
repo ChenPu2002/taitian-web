@@ -72,7 +72,7 @@ export default {
   footer: {
     contactUs: 'Contact Us',
     serviceLine: 'Hotline: 400-826-1128',
-    email: 'Email: sales@chinatuta.com',
+    email: "Email: sales{'@'}chinatuta.com",
     address: 'Address: No. 528 Haiyun Road, Jiaojiang District, Taizhou, Zhejiang, China',
     quickLinks: 'Quick Links',
     aboutUs: 'About Us',
