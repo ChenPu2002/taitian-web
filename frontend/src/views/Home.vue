@@ -120,7 +120,7 @@ import { ref, onMounted, onUnmounted, reactive } from 'vue'
 import { useLocale } from '@/composables/useLocale'
 
 // 引入图片
-import heroBanner from '@/assets/images/banners/hero-banner.jpg'
+import heroBanner from '@/assets/images/banners/new_factory.png'
 import researchConcept from '@/assets/images/banners/research-concept.jpg'
 import researchPractice from '@/assets/images/banners/research-practice.jpg'
 import researchResource from '@/assets/images/banners/research-resource.jpg'

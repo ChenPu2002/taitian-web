@@ -83,8 +83,8 @@ export default {
 
   // Home
   home: {
-    heroTitle: 'Fastening Tools & Pneumatic Equipment Solutions Provider',
-    heroSubtitle: 'Specialized · Smart Manufacturing · Quality Assurance',
+    heroTitle: 'World Quality · Taitian Made',
+    heroSubtitle: 'Precision Machine Tools | Fastening Tools | Pneumatic Equipment Solutions Provider',
     viewProducts: 'Products >>>',
     companyIntro: {
       title: 'Specialized & Innovative',

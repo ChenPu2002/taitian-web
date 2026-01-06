@@ -83,8 +83,8 @@ export default {
 
   // 首页
   home: {
-    heroTitle: '拧紧工具/空气动力设备解决方案服务商',
-    heroSubtitle: '专精特新 · 智能制造 · 品质保障',
+    heroTitle: '世界品质 泰田制造',
+    heroSubtitle: '精密机床丨拧紧工具丨空气动力设备解决方案服务商',
     viewProducts: '产品中心 >>>',
     companyIntro: {
       title: '专精特新',
