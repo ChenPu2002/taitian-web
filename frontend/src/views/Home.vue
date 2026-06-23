@@ -29,11 +29,6 @@
     <!-- Company Intro -->
     <section class="company-intro">
       <div class="container">
-        <div class="intro-content">
-          <p class="intro-text">
-            {{ t('home.companyIntro.description') }}
-          </p>
-        </div>
 
         <!-- 企业信息统计 -->
         <div class="stats-showcase" ref="statsRef">
@@ -273,6 +268,14 @@ onUnmounted(() => {
 // 事业部数据
 const divisions = [
   {
+    nameKey: 'home.divisions.precisionCompressor.name',
+    descKey: 'home.divisions.precisionCompressor.desc',
+    phoneKey: 'home.divisions.precisionCompressor.phone',
+    emailKey: 'home.divisions.precisionCompressor.email',
+    addressKey: 'home.divisions.precisionCompressor.address',
+    image: precisionCompressorDivision
+  },
+  {
     nameKey: 'home.divisions.tighteningTools.name',
     descKey: 'home.divisions.tighteningTools.desc',
     phoneKey: 'home.divisions.tighteningTools.phone',
@@ -287,14 +290,6 @@ const divisions = [
     emailKey: 'home.divisions.compressorHost.email',
     addressKey: 'home.divisions.compressorHost.address',
     image: compressorHostDivision
-  },
-  {
-    nameKey: 'home.divisions.precisionCompressor.name',
-    descKey: 'home.divisions.precisionCompressor.desc',
-    phoneKey: 'home.divisions.precisionCompressor.phone',
-    emailKey: 'home.divisions.precisionCompressor.email',
-    addressKey: 'home.divisions.precisionCompressor.address',
-    image: precisionCompressorDivision
   }
 ]
 
@@ -418,11 +413,6 @@ const onHeroLoad = () => {
     align-items: center;
   }
   
-  .industrial-button {
-    text-decoration: none;
-    display: inline-block;
-  }
-  
   .hero-phone-btn {
     display: inline-flex;
     align-items: center;
@@ -473,32 +463,10 @@ const onHeroLoad = () => {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 50px 60px;
-  margin: 30px 0 0;
-  background: linear-gradient(
-    180deg,
-    #f8f9fa 0%,
-    #f2f4f6 50%,
-    #eef0f2 100%
-  );
-  background-image: 
-    linear-gradient(180deg, #f8f9fa 0%, #f2f4f6 50%, #eef0f2 100%),
-    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e0e3e6' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  max-width: 1200px;
+  margin: 30px auto 0;
+  padding: 20px;
   border-radius: 0;
-  position: relative;
-  overflow: hidden;
-  
-  // 右下角装饰性背景
-  &::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 40%;
-    height: 100%;
-    background: linear-gradient(135deg, transparent 30%, rgba(0, 0, 0, 0.02) 100%);
-    pointer-events: none;
-  }
   
   .stat-item {
     flex: 1;
@@ -609,10 +577,63 @@ const onHeroLoad = () => {
   }
 }
 
+/* 全局按钮样式 */
+.industrial-button {
+  text-decoration: none;
+  display: inline-block;
+  background: #fff;
+  padding: 13px 42px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  color: #000;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  text-align: center;
+  letter-spacing: 1px;
+  border: none;
+}
+
+/* 产品中心和新闻区域的按钮 - 添加阴影 */
+.products-action .industrial-button,
+.news-action .industrial-button {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+}
+
+.industrial-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  left: 0;
+  background: #2CB5BE;
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+.industrial-button:hover {
+  color: #fff;
+}
+
+.industrial-button:hover::before {
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
 // 事业部展示区
 .divisions-section {
   padding: 60px 0;
-  background: #f8f9fa;
 }
 
 .divisions-showcase {
@@ -635,13 +656,7 @@ const onHeroLoad = () => {
     &.reverse {
       flex-direction: row-reverse;
       
-      .division-content {
-        &::before {
-          left: 0;
-          right: auto;
-          background: linear-gradient(90deg, #2CB5BE 0%, transparent 100%);
-        }
-      }
+
     }
   }
   
@@ -671,25 +686,15 @@ const onHeroLoad = () => {
     justify-content: center;
     text-align: left;
     position: relative;
-    background: linear-gradient(135deg, #fafbfc 0%, #f5f7f9 100%);
+    background: #ffffff;
     
-    &::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: 0;
-      transform: translateY(-50%);
-      width: 4px;
-      height: 60%;
-      background: linear-gradient(180deg, #2CB5BE 0%, transparent 100%);
-      border-radius: 2px;
-    }
+
   }
   
   .division-name {
     font-size: 20px;
     font-weight: 600;
-    color: #2CB5BE;
+    color: #000000;
     margin-bottom: 12px;
     letter-spacing: 1px;
     text-align: left;
@@ -720,7 +725,7 @@ const onHeroLoad = () => {
       .contact-icon {
         width: 16px;
         height: 16px;
-        color: #2CB5BE;
+        color: #000000;
         flex-shrink: 0;
       }
       
@@ -800,7 +805,6 @@ const onHeroLoad = () => {
 
 .research-section {
   padding: 80px 0;
-  background: linear-gradient(180deg, #f8f9fa 0%, #fff 100%);
   
   .research-intro {
     max-width: 900px;
@@ -851,7 +855,7 @@ const onHeroLoad = () => {
       
       h3 {
         font-size: 20px;
-        color: #2CB5BE;
+        color: #000000;
         margin-bottom: 10px;
       }
       
@@ -865,7 +869,6 @@ const onHeroLoad = () => {
 
 .products-section {
   padding: 80px 0;
-  background: #f8f9fa;
 
   .products-grid {
     display: grid;
@@ -916,15 +919,12 @@ const onHeroLoad = () => {
     text-align: center;
     margin-top: 50px;
     
-    .industrial-button {
-      text-decoration: none;
-    }
+
   }
 }
 
 .news-section {
   padding: 80px 0;
-  background: white;
   
   .news-grid {
     display: grid;
@@ -996,9 +996,7 @@ const onHeroLoad = () => {
     text-align: center;
     margin-top: 50px;
     
-    .industrial-button {
-      text-decoration: none;
-    }
+
   }
 }
 
